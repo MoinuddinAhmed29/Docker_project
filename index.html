@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albert Einstein Quotes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .quote-box {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .quote-text {
+            font-size: 1.2em;
+            margin: 0;
+        }
+        .quote-author {
+            font-size: 1em;
+            color: #666;
+            margin-top: 10px;
+        }
+        .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Albert Einstein Quotes</h1>
+        <div class="quote-box">
+            <p class="quote-text" id="quote-text">Click the button to get a quote!</p>
+            <p class="quote-author" id="quote-author"></p>
+        </div>
+    </div>
+    <button class="btn" onclick="generateQuote()">Get New Quote</button>
+
+    <script>
+        const quotes = [
+            { text: "Life is like riding a bicycle. To keep your balance you must keep moving.", author: "Albert Einstein" },
+            { text: "Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution.", author: "Albert Einstein" },
+            { text: "The only thing that interferes with my learning is my education.", author: "Albert Einstein" },
+            { text: "We cannot solve problems with the kind of thinking we employed when we came up with them.", author: "Albert Einstein" },
+            { text: "The important thing is not to stop questioning. Curiosity has its own reason for existing.", author: "Albert Einstein" },
+            { text: "Anyone who has never made a mistake has never tried anything new.", author: "Albert Einstein" },
+            { text: "Try not to become a man of success, but rather try to become a man of value.", author: "Albert Einstein" },
+            { text: "A person who never made a mistake never tried anything new.", author: "Albert Einstein" },
+            { text: "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.", author: "Albert Einstein" },
+            { text: "Science without religion is lame, religion without science is blind.", author: "Albert Einstein" }
+        ];
+
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const quote = quotes[randomIndex];
+
+            document.getElementById('quote-text').textContent = `"${quote.text}"`;
+            document.getElementById('quote-author').textContent = `- ${quote.author}`;
+        }
+    </script>
+</body>
+</html>
